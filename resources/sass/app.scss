@@ -1,0 +1,60 @@
+
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+@import "@fortawesome/fontawesome-free/css/all.css";
+//function
+@import "bootstrap/scss/functions";
+// Variables
+@import 'bootstrap/scss/variables';
+
+// Bootstrap
+
+//iconos
+
+$theme-colors: (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark,
+
+);
+// Create your own map
+$custom-colors: (
+    "custom-color-A1": $blue-100,
+    "custom-color-A2": $blue-200,
+    "custom-color-A3": $blue-300,
+    "custom-color-A4": $blue-400,
+    "custom-color-A5": $blue-500,
+    "custom-color-A6": $blue-600,
+    "custom-color-A7": $blue-700,
+    "custom-color-A8": $blue-800,
+    "custom-color-A9": $blue-900,
+
+    "custom-color-G1": $gray-100,
+    "custom-color-G2": $gray-200,
+    "custom-color-G3": $gray-300,
+    "custom-color-G4": $gray-400,
+    "custom-color-G5": $gray-500,
+    "custom-color-G6": $gray-600,
+    "custom-color-G7": $gray-700,
+    "custom-color-G8": $gray-900,
+    "custom-color-G9": $gray-900,
+
+    "custom-color-blue": #c1d5ff,
+    "custom-color-gray": #e8dffa,
+    "custom-color-purple": #6f42c1,
+    "custom-color-green": #1e9172,
+
+);
+
+
+
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import 'bootstrap/scss/bootstrap';
