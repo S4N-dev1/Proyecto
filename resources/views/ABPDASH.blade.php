@@ -27,6 +27,7 @@
                     <a href="#" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
                         <i class="bi bi-person-gear me-2"></i> Soporte
                     </a>
+                    <a class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3" href="{{ url('ABPLANDING') }}"><i class="bi bi-file-earmark me-2"></i> Landing page</a>
                 </div>
             </nav>
 

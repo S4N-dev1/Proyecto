@@ -96,6 +96,60 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="{{ asset('imgenes/lapiceros.jpg') }}" class="card-img-top" alt="Lapiceros" style="height: 200px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">lapiceros</h5>
+                        <p class="card-text">Perfectos para tus ideas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="{{ asset('imgenes/libretas.png') }}" class="card-img-top" alt="libretas" style="height: 200px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Libreta</h5>
+                        <p class="card-text">La mejor libreta en tus manos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="{{ asset('imgenes/colores.png') }}" class="card-img-top" alt="colorss" style="height: 200px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Colores</h5>
+                        <p class="card-text">Dale  mas vida a tus ideas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="{{ asset('imgenes/trans.jpg') }}" class="card-img-top" alt="trans" style="height: 200px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Transbordador</h5>
+                        <p class="card-text">Mide con precision.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="{{ asset('imgenes/tijeras.jpg') }}" class="card-img-top" alt="tijeras" style="height: 200px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Tijeras</h5>
+                        <p class="card-text">Corta con estilo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="{{ asset('imgenes/postis.png') }}" class="card-img-top" alt="postis" style="height: 200px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Postics</h5>
+                        <p class="card-text">Decora tu estilo.</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="text-center mt-4">
             <a href="{{ url('ABPLANDING') }}" class="btn btn-primary btn-lg">Ver todos los productos</a>
