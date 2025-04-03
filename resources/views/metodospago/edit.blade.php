@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-8">
             <h1 class="alert alert-success">Editar persona</h1>
-            <a href="{{route('persona.index')}}" class="btn btn-primary">Regresar</a>
+            <a href="{{route('metodospago.index')}}" class="btn btn-primary">Regresar</a>
         </div>
     </div>
 
@@ -19,16 +19,14 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('persona.update', $persona->id_personas) }}" method="POST">
+            <form action="{{ route('metodospago.update', $metodospago->MetodoPagoID) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
-                    <label for="Nombre" class="form-label">Nombre de la persona</label>
-                    <input type="text" class="form-control" id="Nombre" name="Nombre" value="{{ $persona->Nombre }}" required>
-                    <label for="ap" class="form-label">Apellido paterno</label>
-                    <input type="text" class="form-control" id="ap" name="ap" value="{{ $persona->ap }}" required>
-                    <label for="am" class="form-label">Apellido materno</label>
-                    <input type="text" class="form-control" id="am" name="am" value="{{ $persona->am }}" required>
+                    <label for="NombreMetods" class="form-label">Nombre del metodo</label>
+                    <input type="text" class="form-control" id="NombreMetods" name="NombreMetods" value="{{ $metodospago->NombreMetods }}" required>
+                    <label for="Descripcion" class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" id="Descripcion" name="Descripcion" value="{{ $metodospago->Descripcion }}" required>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Actualizar</button>

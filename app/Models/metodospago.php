@@ -9,7 +9,7 @@ class metodospago extends Model
 {
 
     use SoftDeletes;
-    protected $table = 'metodospago';
+    protected $table = 'metodospagos';
     protected $primaryKey = 'MetodoPagoID';
 
     protected $fillable = ['NombreMetods','Descripcion'];

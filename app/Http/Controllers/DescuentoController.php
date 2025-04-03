@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\descuento;
+use App\Models\persona;
 use Illuminate\Http\Request;
 
 class DescuentoController extends Controller
@@ -12,7 +13,8 @@ class DescuentoController extends Controller
      */
     public function index()
     {
-        //
+        $descuentos = descuento::all();
+        return view('descuento.index', compact('descuentos'));
     }
 
     /**
@@ -20,7 +22,7 @@ class DescuentoController extends Controller
      */
     public function create()
     {
-        //
+        return view('descuento.create');
     }
 
     /**
@@ -28,7 +30,17 @@ class DescuentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'TipoDescuento' => 'required|max:10',
+            'MontoDescuento' => 'required|max:10',
+
+        ],[],[
+            'TipoDescuento' => 'tipo de descuento',
+            'MontoDescuento' => 'Monto de descuento ',
+
+        ]);
+        descuento::create($request->all());
+        return redirect()->route('descuento.index')->with('success', 'Tipo de descuento agregado');
     }
 
     /**
@@ -36,7 +48,7 @@ class DescuentoController extends Controller
      */
     public function show(descuento $descuento)
     {
-        //
+
     }
 
     /**
@@ -44,7 +56,8 @@ class DescuentoController extends Controller
      */
     public function edit(descuento $descuento)
     {
-        //
+
+        return view('descuento.edit', compact('descuento'));
     }
 
     /**
@@ -52,7 +65,16 @@ class DescuentoController extends Controller
      */
     public function update(Request $request, descuento $descuento)
     {
-        //
+        $request->validate([
+            'TipoDescuento' => 'required|max:10',
+            'MontoDescuento' => 'required|max:10',
+
+        ],[],[
+            'TipoDescuento' => 'tipo de descuento',
+            'MontoDescuento' => 'Monto de descuento ',
+        ]);
+        $descuento->update($request->all());
+        return redirect()->route('descuento.index')->with('success', 'Decuento actualizado');
     }
 
     /**
@@ -60,6 +82,7 @@ class DescuentoController extends Controller
      */
     public function destroy(descuento $descuento)
     {
-        //
+        $descuento->delete();
+        return redirect()->route('descuento.index')->with('success', 'Tipo de descuento eliminado');
     }
 }

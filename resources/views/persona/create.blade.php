@@ -21,7 +21,7 @@
             <form action="{{ route('persona.store') }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <label for="Nombre" class="form-label">Nombre de la persona</label>
+                    <label for="Nombre" class="form-label">Nombre de la personAa</label>
                     <input type="text" class="form-control" id="Nombre" name="Nombre" required>
                     <label for="ap" class="form-label">Apellido paterno</label>
                     <input type="text" class="form-control" id="ap" name="ap" required>
