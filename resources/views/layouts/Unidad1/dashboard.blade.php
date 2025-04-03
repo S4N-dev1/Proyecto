@@ -1,10 +1,11 @@
-@extends('Layouts.app')
+@extends('layouts.app')
 @section('content')
     <div class="container-fluid bg-whithe w-75 ">
         <div class="row ">
             <div class="col-2 bg-custom-color-blue p-4 text-light rounded-4 rounded-end-0">
                 <div class="row border-primary">
-                    <img src="{{asset("imgenes/yopelon.jpg")}}" class="rounded-circle mx-auto d-block w-60" alt="Fotografia">
+                    <img src="{{asset("imgenes/yopelon.jpg")}}" class="rounded-circle mx-auto d-block w-60"
+                         alt="Fotografia">
                 </div>
                 <div class="row p-3">
                     <h5 class="p-2">
@@ -24,14 +25,14 @@
                 </div>
             </div>
             <div class="col-7 p-2 bg-custom-color-gray">
-                <input type="text"  class="form-control"  placeholder="Search..." >
+                <input type="text" class="form-control" placeholder="Search...">
                 <div class="row p-5">
                     <h3>Categories</h3>
                     <div class="col-2 p-3 md-3 card text-center shadow card-body bg-custom-color-purple ">
                         <h5 class="text-light fw-bold"><i class="fa-solid fa-camera"></i> Pictures</h5>
                         <h6 class="text-light fw-bold">480 files</h6>
                     </div>
-                    <div class="col-3 p-4 ms-3 card text-center shadow card-body bg-custom-color-green " >
+                    <div class="col-3 p-4 ms-3 card text-center shadow card-body bg-custom-color-green ">
                         <h5 class="text-light fw-bold"><i class="fa-solid fa-file-lines"></i> Documents</h5>
                         <h6 class="text-light fw-bold">190 files</h6>
                     </div>
@@ -81,9 +82,11 @@
                                 <th scope="col"><i class="fa-solid fa-camera text-danger-emphasis"></i> IMG_100000</th>
                                 <th scope="col">PNG file</th>
                                 <th scope="col">5 MB</th>
-                                <th scope="col"><Button type="button" class="btn">
+                                <th scope="col">
+                                    <Button type="button" class="btn">
                                         <i class="fa-solid fa-share-nodes"></i>
-                                    </Button></th>
+                                    </Button>
+                                </th>
                                 <th class="col">
                                     <button type="button" class="btn">
                                         <i class="fa-solid fa-minus"></i>
@@ -96,9 +99,11 @@
                                 <th scope="row"><i class="fa-solid fa-video text-danger"></i> Startup pitch</th>
                                 <td>AVI filek</td>
                                 <td>105 MB</td>
-                                <th scope="col"><Button type="button" class="btn">
+                                <th scope="col">
+                                    <Button type="button" class="btn">
                                         <i class="fa-solid fa-share-nodes"></i>
-                                    </Button></th>
+                                    </Button>
+                                </th>
                                 <th class="col">
                                     <button type="button" class="btn">
                                         <i class="fa-solid fa-minus"></i>
@@ -109,9 +114,11 @@
                                 <th scope="row"><i class="fa-solid fa-microphone text-primary"></i> Freestyle beat</th>
                                 <td>MP3 file</td>
                                 <td>21 MB</td>
-                                <th scope="col"><Button type="button" class="btn">
+                                <th scope="col">
+                                    <Button type="button" class="btn">
                                         <i class="fa-solid fa-share-nodes"></i>
-                                    </Button></th>
+                                    </Button>
+                                </th>
                                 <th class="col">
                                     <button type="button" class="btn">
                                         <i class="fa-solid fa-minus"></i>
@@ -122,9 +129,11 @@
                                 <th scope="row"><i class="fa-solid fa-file text-info fw-bold"></i> Work proposal</th>
                                 <td scope="col">DOCx file</td>
                                 <td scope="col">500 kb</td>
-                                <th scope="col"><Button type="button" class="btn">
+                                <th scope="col">
+                                    <Button type="button" class="btn">
                                         <i class="fa-solid fa-share-nodes"></i>
-                                    </Button></th>
+                                    </Button>
+                                </th>
                                 <th class="col">
                                     <button type="button" class="btn">
                                         <i class="fa-solid fa-minus"></i>

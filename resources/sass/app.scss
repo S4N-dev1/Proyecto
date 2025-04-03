@@ -22,8 +22,9 @@ $theme-colors: (
     "dark":       $dark,
 
 );
-// Create your own map
+// colors blues
 $custom-colors: (
+
     "custom-color-A1": $blue-100,
     "custom-color-A2": $blue-200,
     "custom-color-A3": $blue-300,
@@ -44,8 +45,8 @@ $custom-colors: (
     "custom-color-G8": $gray-900,
     "custom-color-G9": $gray-900,
 
-    "custom-color-blue": #c1d5ff,
-    "custom-color-gray": #e8dffa,
+    "custom-color-blue": #0031ff,
+    "custom-color-gray": #6d6a7a,
     "custom-color-purple": #6f42c1,
     "custom-color-green": #1e9172,
 
