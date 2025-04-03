@@ -64,20 +64,20 @@
             </ul>
         </div>
 
-        <!-- Botones 1 a 12 -->
+        <!-- Botones 1 a 12 con rutas reales -->
         <ul class="navbar-nav flex-row">
-            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta1') }}">Inicio</a></li>
-            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta2') }}">Productos</a></li>
-            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta3') }}">Clientes</a></li>
-            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta4') }}">Empleados</a></li>
-            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta5') }}">Ventas</a></li>
-            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta6') }}">Pagos</a></li>
-            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta7') }}">Proveedores</a></li>
-            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta8') }}">Métodos de Pago</a></li>
-            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta9') }}">Descuentos</a></li>
-            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta10') }}">Reportes</a></li>
-            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta11') }}">Contacto</a></li>
-            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta12') }}">Cerrar sesión</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('/') }}">Inicio</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('productos') }}">Productos</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('clientes') }}">Clientes</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('empleados') }}">Empleados</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ventas') }}">Ventas</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('pagos') }}">Pagos</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('proveedores') }}">Proveedores</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ route('metodospago.index') }}">Métodos de Pago</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ route('descuento.index') }}">Descuentos</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ route('persona.index') }}">Personas</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('contacto') }}">Contacto</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('logout') }}">Cerrar sesión</a></li>
         </ul>
     </div>
 </nav>
@@ -87,7 +87,7 @@
     <div class="container">
         <h1 class="display-4 fw-bold">Inspira tus ideas</h1>
         <p class="lead">Papelería, creatividad y calidad en un solo lugar.</p>
-        <a href="#" class="btn btn-warning btn-lg mt-3">Descubre nuestros productos</a>
+        <a href="{{ url('productos') }}" class="btn btn-warning btn-lg mt-3">Descubre nuestros productos</a>
     </div>
 </section>
 
@@ -156,4 +156,3 @@
     </div>
 </section>
 @endsection
-
