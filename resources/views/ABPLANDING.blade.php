@@ -1,75 +1,159 @@
-@extends('Layouts.app')
+@extends('layouts.app')
+
 @section('content')
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <style>
-        .img {
-            background: url('{{ asset("imgenes/pencil4.png") }}') no-repeat center center;
-            background-size: cover;/* La imagen se recorta al centro de esta */
-            height: 70vh; /* Hace que ocupe toda la pantalla  de izquierda a derecha  y abajo hacia arriba se selecciona el espacio a abarcar*/
-            display: flex;/* Vuelve felxible la imagen para los componentes que iran dentro */
-            align-items: center;/* alinea todos los componentes en el centro de la imagen*/
-        }
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+    }
 
-    </style>
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url('{{ asset("imgenes/pencil4.png") }}') center center / cover no-repeat;
+        height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+    }
 
+    .nav-custom {
+        background-color: #0d6efd;
+    }
 
+    .nav-custom .nav-link {
+        color: white;
+        margin-right: 10px;
+    }
 
-<!-- Apartado de todo mi parte del encabezado -->
-<div class=" bg-custom-color-A8 text-left text-custom-color-A1 shadow mx-0 p-0 mt-0">
-    <h5 class="p-2"><a href="{{url('ABPDASH')}}" class="btn text-decoration-none {{request()->routeIs('ABPDASH')?'active_custom':''}} text-white"><i class="bi bi-file"></i> DASH</a></h5>
-</div>
-<div class="img">
+    .nav-custom .nav-link:hover {
+        color: #ffc107;
+    }
 
-    <div class="container text-center">
-        <h1 class="text-custom-color-A8">Pluma y Papel</h1>
-        <h2 class="text-custom-color-A7">Productos de calidad</h2>
-        <p class="lead mt-3 text-custom-color-A6">Los mejores productos del mercado.</p>
-        <div class=" bg-custom-color-A2 text-center shadow mx-5 p-3 mt-5">
-            <h3>¡Únete ahora!</h3>
-            <button class="btn btn-dark">Registrarse</button>
+    .section-title {
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+    .card img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .active_custom {
+        font-weight: bold;
+        color: #ffc107 !important;
+    }
+</style>
+
+<!-- Navbar personalizada -->
+<nav class="navbar nav-custom shadow px-3">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <!-- Dropdown "Pluma y Papel" -->
+        <div class="dropdown">
+            <a class="navbar-brand dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                <i class="bi bi-feather"></i> Pluma y Papel
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{ url('ABPDASH') }}"><i class="bi bi-file-earmark"></i> DASH</a></li>
+                <li><a class="dropdown-item" href="#">Opción 2</a></li>
+                <li><a class="dropdown-item" href="#">Opción 3</a></li>
+            </ul>
         </div>
+
+        <!-- Botones 1 a 12 -->
+        <ul class="navbar-nav flex-row">
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta1') }}">Inicio</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta2') }}">Productos</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta3') }}">Clientes</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta4') }}">Empleados</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta5') }}">Ventas</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta6') }}">Pagos</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta7') }}">Proveedores</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta8') }}">Métodos de Pago</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta9') }}">Descuentos</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta10') }}">Reportes</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta11') }}">Contacto</a></li>
+            <li class="nav-item me-2"><a class="nav-link" href="{{ url('ruta12') }}">Cerrar sesión</a></li>
+        </ul>
     </div>
-</div>
-<div class="bg-custom-color-blue ">
-<!-- Apartado de toda mi parte de los beneficios -->
-<section class="container mt-5 ">
-    <div class="row text-center "> <h1>Productos mas vendidos</h1>
-        <div class="col-md-4 text-center ">
-            <h4 class="pr-5">Colores</h4>
-                <p class="px-5 shadow bg-light"><img src="{{asset("imgenes/colors1.jpeg")}}" class="rounded-5 mx-0 d-block " width="300"  height="300" alt="Fotografia"></p>
-        </div>
-        <div class="col-md-4 text-center">
-            <h4 class="pr-5">Tinta de impresora</h4>
-            <p class="px-5 shadow bg-light"><img src="{{asset("imgenes/tinta1.jpeg")}}" class="rounded-5 mx-0 d-block " width="300"  height="300" alt="Fotografia"></p>
-        </div>
-        <div class="col-md-4 text-center">
-            <h4 class="pr-5">Bolígrafos</h4>
-            <p class="px-5 shadow bg-light"><img src="{{asset("imgenes/Boli1.jpeg")}}" class="rounded-5 mx-0 d-block " width="300"  height="300" alt="Fotografia"></p>
-        </div>
+</nav>
+
+<!-- Hero principal -->
+<section class="hero">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Inspira tus ideas</h1>
+        <p class="lead">Papelería, creatividad y calidad en un solo lugar.</p>
+        <a href="#" class="btn btn-warning btn-lg mt-3">Descubre nuestros productos</a>
     </div>
 </section>
-</div>
-<!-- Apartado de calificaciones -->
-<div class="container mt-5">
-    <h3 class="text-center">Lo que dicen de nuestros productos</h3>
-    <p class="text-center">"De la mejor calidad"</p>
-</div>
 
-<!-- Apartado de convencimiento  -->
-<div class="container mt-5 text-center">
-    <h3>Tu creatividad en papel, tus ideas sin límites</h3>
-    <p>Desde lo más simple hasta lo más creativo, tenemos todo lo que necesitas para plasmar tus ideas. ¡Haz que cada hoja cuente!.</p>
-</div>
-
-<!--Apartado de incitacion final -->
-<div class="container mt-5 text-center">
-    <div class="bg-custom-color-A2 p-3 shadow text-center">
-        <h3>¡No esperes más!</h3>
-        <button class="btn btn-dark">Mirar productos</button>
+<!-- Productos destacados -->
+<section class="container py-5">
+    <h2 class="text-center section-title">Más Vendidos</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="{{ asset('imgenes/colors1.jpeg') }}" class="card-img-top" alt="Colores">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Colores</h5>
+                    <p class="card-text">Perfectos para dar vida a tus ideas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="{{ asset('imgenes/tinta1.jpeg') }}" class="card-img-top" alt="Tinta">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Tinta para impresora</h5>
+                    <p class="card-text">Nitidez y calidad en cada impresión.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="{{ asset('imgenes/Boli1.jpeg') }}" class="card-img-top" alt="Bolígrafos">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Bolígrafos</h5>
+                    <p class="card-text">Escribe con estilo y comodidad.</p>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
+    <!-- Botón global para ver todos -->
+    <div class="text-center mt-4">
+        <a href="{{ url('productos') }}" class="btn btn-primary btn-lg">
+            Ver todos los productos
+        </a>
+    </div>
+</section>
 
+<!-- Opiniones -->
+<section class="bg-light py-5 text-center">
+    <div class="container">
+        <h2 class="section-title">Nuestros clientes opinan</h2>
+        <blockquote class="blockquote">
+            <p>"Productos de excelente calidad. ¡Recomendado al 100%!"</p>
+        </blockquote>
+    </div>
+</section>
+
+<!-- Frase motivadora -->
+<section class="container text-center py-5">
+    <h3 class="fw-bold">Tu creatividad merece las mejores herramientas</h3>
+    <p class="fs-5">Transforma cada página en una obra de arte con Pluma y Papel.</p>
+</section>
+
+<!-- Llamado a la acción -->
+<section class="bg-primary text-white text-center py-5">
+    <div class="container">
+        <h3 class="mb-3">¿Listo para comenzar?</h3>
+        <a href="{{ url('productos') }}" class="btn btn-outline-light btn-lg">Explorar productos</a>
+    </div>
+</section>
 @endsection
+
