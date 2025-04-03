@@ -1,35 +1,43 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row justify-content-center">
-        <div class="col-8">
-            <h1 class="alert alert-success">Agregar Metodo de pago</h1>
-            <a href="{{route('metodospago.index')}}" class="btn btn-primary">Regresar</a>
+    <div class="container my-5">
+        <!-- Encabezado con estilo combinado -->
+        <div class="p-3 mb-3 bg-primary text-white rounded-3">
+            <div class="container-fluid py-2 d-flex justify-content-between align-items-center">
+                <h1 class="display-6 fw-bold">Agregar Método de Pago</h1>
+                <a href="{{ route('metodospago.index') }}" class="btn btn-light">Regresar</a>
+            </div>
         </div>
-    </div>
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    <div class="row justify-content-center mt-5">
-        <div class="col-6">
-            <form action="{{ route('metodospago.store') }}" method="POST">
-                @csrf
-                <div class="mb-3">
-                    <label for="NombreMetods" class="form-label">Nombre del Metodo</label>
-                    <input type="text" class="form-control" id="NombreMetods" name="NombreMetods" required>
-                    <label for="Descripcion" class="form-label">Descripcion</label>
-                    <input type="text" class="form-control" id="Descripcion" name="Descripcion" required>
 
-                </div>
+        <!-- Mensaje emergente de errores -->
+        @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <ul class="mb-0">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
 
-                <button type="submit" class="btn btn-primary">Guardar</button>
-            </form>
+        <!-- Formulario en tarjeta -->
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <form action="{{ route('metodospago.store') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="NombreMetods" class="form-label">Nombre del Método</label>
+                        <input type="text" class="form-control" id="NombreMetods" name="NombreMetods" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Descripcion" class="form-label">Descripción</label>
+                        <input type="text" class="form-control" id="Descripcion" name="Descripcion" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            </div>
         </div>
     </div>
 @endsection

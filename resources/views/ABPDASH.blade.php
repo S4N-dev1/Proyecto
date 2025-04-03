@@ -1,43 +1,38 @@
 @extends('Layouts.app')
 @section('content')
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<div class=" bg-custom-color-A8 text-left text-custom-color-A1 shadow mx-0 p-0 mt-0">
-    <h5 class="p-2"><a href="{{url('ABPLANDING')}}" class="btn text-decoration-none {{request()->routeIs('ABPLANDING')?'active_custom':''}} text-white"><i class="bi bi-file"></i> LANDING</a></h5>
-</div>
-<div class="container-fluid bg-custom-color-G2 w-100 ">
-    <div class="container-fluid">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <div class="container-fluid bg-custom-color-G2">
         <div class="row">
-            <nav class="col-2 bg-custom-color-A7 p-4 text-light rounded-4 rounded-end-0 mx-auto">
-                <div class="row border-primary">
-                    <img src="{{ asset('imgenes/pape3.jpeg') }}" class="rounded-5 mx-auto d-block w-4" alt="Fotografia">
+            <!-- Sidebar rediseñado -->
+            <nav class="col-2 bg-custom-color-A7 p-4 text-light rounded-4">
+                <div class="text-center mb-4">
+                    <img src="{{ asset('imgenes/pape3.jpeg') }}" alt="Fotografia" class="rounded-circle mx-auto d-block" style="width: 80px; height: 80px;">
+                    <h4 class="mt-2">Inicio</h4>
                 </div>
-                <h4 class="text-center fa-solid text-light p-3 ">Inicio</h4>
-
-                <h5>
-                    <a href="{{ route('persona.index') }}" class="text-light text-decoration-none">
-                        <i class="bi bi-person-lines-fill p-3"></i> Personas
+                <div class="list-group">
+                    <a href="{{ route('persona.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
+                        <i class="bi bi-person-lines-fill me-2"></i> Personas
                     </a>
-                </h5>
-                <h5>
-                    <a href="{{ route('metodospago.index') }}" class="text-light text-decoration-none">
-                        <i class="bi bi-credit-card-2-front-fill p-3"></i> Métodos de Pago
+                    <a href="{{ route('metodospago.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
+                        <i class="bi bi-credit-card-2-front-fill me-2"></i> Métodos de Pago
                     </a>
-                </h5>
-                <h5>
-                    <a href="{{ route('descuento.index') }}" class="text-light text-decoration-none">
-                        <i class="bi bi-tags-fill p-3"></i> Descuentos
+                    <a href="{{ route('descuento.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
+                        <i class="bi bi-tags-fill me-2"></i> Descuentos
                     </a>
-                </h5>
-
-               
-                <h5><i class="bi bi-bar-chart text-light p-3"> Estadísticas</i></h5>
-                <h5><i class="bi bi-person-gear text-light p-3"> Soporte</i></h5>
-                
+                    <a href="#" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
+                        <i class="bi bi-bar-chart me-2"></i> Estadísticas
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
+                        <i class="bi bi-person-gear me-2"></i> Soporte
+                    </a>
+                </div>
             </nav>
 
-            <!-- Todo el contenido -->
+            <!-- Contenido principal -->
             <main class="col-md-10 p-4">
+                <!-- Aquí iría el resto del contenido -->
                 <div class="row">
                     <div class="col-md-4 text-center px-1 shadow">
                         <div class="card">
@@ -58,36 +53,35 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row p-2">
                     <h3 class="text-custom-color-A8">Lista de Actividades</h3>
-                    <div class="col-2 ms-1 p-1 d-flex gap-2 mb-5 card pt-4 shadow text-center">
-                        <button type="button" class="btn">
+                    <!-- Botones de actividades -->
+                    <div class="col-2 ms-1 p-3 d-flex align-items-center justify-content-center card pt-4 shadow text-center">
+                        <button type="button" class="btn w-100">
                             <h5 class="text-custom-color-A2 fw-bold"><i class="bi bi-bag-fill"></i> Pedidos y ventas</h5>
                         </button>
                     </div>
-                    <div class="col-2 ms-1 p-3 d-flex gap-2 mb-5 card pt-4 shadow text-center">
-                        <button type="button" class="btn">
+                    <div class="col-2 ms-1 p-3 d-flex align-items-center justify-content-center card pt-4 shadow text-center">
+                        <button type="button" class="btn w-100">
                             <h5 class="text-custom-color-A2 fw-bold"><i class="bi bi-people-fill"></i> Usuarios nuevos</h5>
                         </button>
                     </div>
-                    <div class="col-2 ms-1 p-3 d-flex gap-2 mb-5 card pt-4 shadow text-center">
-                        <button type="button" class="btn">
+                    <div class="col-2 ms-1 p-3 d-flex align-items-center justify-content-center card pt-4 shadow text-center">
+                        <button type="button" class="btn w-100">
                             <h5 class="text-custom-color-A2"><i class="bi bi-exclamation-triangle-fill"></i> Errores/Alertas</h5>
                         </button>
                     </div>
-                    <div class="col-2 ms-1 p-3 d-flex gap-2 mb-5 card pt-4 shadow text-center">
-                        <button type="button" class="btn">
+                    <div class="col-2 ms-1 p-3 d-flex align-items-center justify-content-center card pt-4 shadow text-center">
+                        <button type="button" class="btn w-100">
                             <h5 class="text-custom-color-A2 fw-bold"><i class="bi bi-file-earmark-check-fill"></i> Transacciones recientes</h5>
                         </button>
                     </div>
-                    <div class="col-2 ms-1 p-3 d-flex gap-2 mb-5 card pt-4 shadow text-center">
-                        <button type="button" class="btn">
+                    <div class="col-2 ms-1 p-3 d-flex align-items-center justify-content-center card pt-4 shadow text-center">
+                        <button type="button" class="btn w-100">
                             <h5 class="text-custom-color-A2 fw-bold"><i class="bi bi-clock-fill"></i> Publicaciones recientes</h5>
                         </button>
                     </div>
                 </div>
-
                 <div class="row p-2">
                     <h3 class="text-custom-color-A8">Estadísticas</h3>
                 </div>
@@ -102,40 +96,39 @@
             </main>
         </div>
     </div>
-</div>
 
-<script>
-    const DONITA = document.getElementById('doughnutChart').getContext('2d');
-    new Chart(DONITA, {
-        type: 'doughnut',
-        data: {
-            labels: ['Ventas realizadas', 'Ventas pendientes'],
-            datasets: [{
-                data: [30, 70],
-                backgroundColor: ['#6b95ff', '#12268e']
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false
-        }
-    });
+    <script>
+        const DONITA = document.getElementById('doughnutChart').getContext('2d');
+        new Chart(DONITA, {
+            type: 'doughnut',
+            data: {
+                labels: ['Ventas realizadas', 'Ventas pendientes'],
+                datasets: [{
+                    data: [30, 70],
+                    backgroundColor: ['#6b95ff', '#12268e']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
 
-    const COLUMS = document.getElementById('barChart').getContext('2d');
-    new Chart(COLUMS, {
-        type: 'bar',
-        data: {
-            labels: ['Colores', 'Tinta para Impresoras', 'Bolígrafos'],
-            datasets: [{
-                label: 'Productos más vendidos',
-                data: [350, 270, 190],
-                backgroundColor: ['#69aed5', '#315e68', '#152d49']
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false
-        }
-    });
-</script>
+        const COLUMS = document.getElementById('barChart').getContext('2d');
+        new Chart(COLUMS, {
+            type: 'bar',
+            data: {
+                labels: ['Colores', 'Tinta para Impresoras', 'Bolígrafos'],
+                datasets: [{
+                    label: 'Productos más vendidos',
+                    data: [350, 270, 190],
+                    backgroundColor: ['#69aed5', '#315e68', '#152d49']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
 @endsection

@@ -1,37 +1,47 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row justify-content-center">
-        <div class="col-8">
-            <h1 class="alert alert-success">Agregar Persona</h1>
-            <a href="{{route('persona.index')}}" class="btn btn-primary">Regresar</a>
+    <div class="container my-5">
+        <!-- Encabezado con estilo combinado -->
+        <div class="p-3 mb-3 bg-primary text-white rounded-3">
+            <div class="container-fluid py-2 d-flex justify-content-between align-items-center">
+                <h1 class="display-6 fw-bold">Agregar Persona</h1>
+                <a href="{{ route('persona.index') }}" class="btn btn-light">Regresar</a>
+            </div>
         </div>
-    </div>
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    <div class="row justify-content-center mt-5">
-        <div class="col-6">
-            <form action="{{ route('persona.store') }}" method="POST">
-                @csrf
-                <div class="mb-3">
-                    <label for="Nombre" class="form-label">Nombre de la personAa</label>
-                    <input type="text" class="form-control" id="Nombre" name="Nombre" required>
-                    <label for="ap" class="form-label">Apellido paterno</label>
-                    <input type="text" class="form-control" id="ap" name="ap" required>
-                    <label for="am" class="form-label">Apellido materno</label>
-                    <input type="text" class="form-control" id="am" name="am" required>
 
-                </div>
+        <!-- Mensaje emergente de errores -->
+        @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <ul class="mb-0">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
 
-                <button type="submit" class="btn btn-primary">Guardar</button>
-            </form>
+        <!-- Formulario en tarjeta -->
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <form action="{{ route('persona.store') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="Nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="Nombre" name="Nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ap" class="form-label">Apellido Paterno</label>
+                        <input type="text" class="form-control" id="ap" name="ap" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="am" class="form-label">Apellido Materno</label>
+                        <input type="text" class="form-control" id="am" name="am" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            </div>
         </div>
     </div>
 @endsection
