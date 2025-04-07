@@ -6,30 +6,7 @@
     <div class="container-fluid bg-custom-color-G2">
         <div class="row">
             <!-- Sidebar rediseñado -->
-            <nav class="col-2 bg-custom-color-A7 p-4 text-light rounded-4">
-                <div class="text-center mb-4">
-                    <img src="{{ asset('imgenes/pape3.jpeg') }}" alt="Fotografia" class="rounded-circle mx-auto d-block" style="width: 80px; height: 80px;">
-                    <h4 class="mt-2">Inicio</h4>
-                </div>
-                <div class="list-group">
-                    <a href="{{ route('persona.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
-                        <i class="bi bi-person-lines-fill me-2"></i> Personas
-                    </a>
-                    <a href="{{ route('metodospago.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
-                        <i class="bi bi-credit-card-2-front-fill me-2"></i> Métodos de Pago
-                    </a>
-                    <a href="{{ route('descuento.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
-                        <i class="bi bi-tags-fill me-2"></i> Descuentos
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
-                        <i class="bi bi-bar-chart me-2"></i> Estadísticas
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
-                        <i class="bi bi-person-gear me-2"></i> Soporte
-                    </a>
-                    <a class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3" href="{{ url('ABPLANDING') }}"><i class="bi bi-file-earmark me-2"></i> Landing page</a>
-                </div>
-            </nav>
+           
 
             <!-- Contenido principal -->
             <main class="col-md-10 p-4">
