@@ -7,6 +7,7 @@
             <div class="container-fluid py-2 d-flex justify-content-between align-items-center">
                 <h1 class="display-6 fw-bold">Agregar Método de Pago</h1>
                 <a href="{{ route('metodospago.index') }}" class="btn btn-light">Regresar</a>
+                
             </div>
         </div>
 

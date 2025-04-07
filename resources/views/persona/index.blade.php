@@ -8,6 +8,9 @@
                 <h1 class="display-6 fw-bold">Personas</h1>
                 <p class="fs-5">Gestiona la información de las personas en el sistema.</p>
                 <a href="{{ route('persona.create') }}" class="btn btn-light">Agregar Persona</a>
+                <a href="{{ url('ABPDASH') }}" class="btn btn-light">Regresar</a>
+                
+
             </div>
         </div>
 

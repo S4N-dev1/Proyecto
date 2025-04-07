@@ -8,6 +8,7 @@
                 <h1 class="display-6 fw-bold">Métodos de Pago</h1>
                 <p class="fs-5">Administra los métodos de pago disponibles en el sistema.</p>
                 <a href="{{ route('metodospago.create') }}" class="btn btn-light">Agregar Método de Pago</a>
+                <a href="{{ url('ABPDASH') }}" class="btn btn-light">Regresar</a>
             </div>
         </div>
 
