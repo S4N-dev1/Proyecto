@@ -1,8 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.side')
 
 @section('content')
     <div class="container my-5">
-        <!-- Encabezado modificado para ocupar menos espacio y con paleta de colores azul -->
         <div class="p-3 mb-3 bg-primary text-white rounded-3">
             <div class="container-fluid py-2">
                 <h1 class="display-6 fw-bold">Personas</h1>
