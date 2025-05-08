@@ -24,7 +24,7 @@
         <!-- Formulario en tarjeta -->
         <div class="card shadow-sm">
             <div class="card-body">
-                <form action="{{ route('venta.update', $venta->id_venta) }}" method="POST">
+                <form action="{{ route('venta.update', $venta) }}" method="POST">
                     @csrf
                     @method('PUT')
 
@@ -34,8 +34,7 @@
                         <select name="id_cliente" class="form-select" required>
                             <option value="">-- Seleccionar Cliente --</option>
                             @foreach ($clientes as $cliente)
-                                <option value="{{ $cliente->id_cliente }}"
-                                    {{ $venta->id_cliente == $cliente->id_cliente ? 'selected' : '' }}>
+                                <option value="{{ $cliente->id_cliente }}" {{ $venta->id_cliente == $cliente->id_cliente ? 'selected' : '' }}>
                                     {{ $cliente->persona->Nombre ?? 'Sin Cliente' }}
                                 </option>
                             @endforeach
@@ -48,8 +47,7 @@
                         <select name="id_empleado" class="form-select" required>
                             <option value="">-- Seleccionar Empleado --</option>
                             @foreach ($empleados as $empleado)
-                                <option value="{{ $empleado->id_empleado }}"
-                                    {{ $venta->id_empleado == $empleado->id_empleado ? 'selected' : '' }}>
+                                <option value="{{ $empleado->id_empleado }}" {{ $venta->id_empleado == $empleado->id_empleado ? 'selected' : '' }}>
                                     {{ $empleado->persona->Nombre ?? 'Sin Empleado' }}
                                 </option>
                             @endforeach
@@ -62,8 +60,7 @@
                         <select name="MetodoPagoID" class="form-select" required>
                             <option value="">-- Seleccionar Método de Pago --</option>
                             @foreach ($metodosPago as $metodo)
-                                <option value="{{ $metodo->MetodoPagoID }}"
-                                    {{ $venta->MetodoPagoID == $metodo->MetodoPagoID ? 'selected' : '' }}>
+                                <option value="{{ $metodo->MetodoPagoID }}" {{ $venta->MetodoPagoID == $metodo->MetodoPagoID ? 'selected' : '' }}>
                                     {{ $metodo->NombreMetods }}
                                 </option>
                             @endforeach
@@ -73,15 +70,13 @@
                     <!-- Campo de fecha de venta -->
                     <div class="mb-3">
                         <label for="FechaDeVenta" class="form-label">Fecha de Venta</label>
-                        <input type="date" class="form-control" id="FechaDeVenta" name="FechaDeVenta"
-                               value="{{ $venta->FechaDeVenta }}" required>
+                        <input type="date" class="form-control" id="FechaDeVenta" name="FechaDeVenta" value="{{ $venta->FechaDeVenta }}" required>
                     </div>
 
                     <!-- Campo de total con descuento -->
                     <div class="mb-3">
                         <label for="TotalConDescuento" class="form-label">Total con Descuento</label>
-                        <input type="number" step="0.01" class="form-control" id="TotalConDescuento" name="TotalConDescuento"
-                               value="{{ $venta->TotalConDescuento }}" required>
+                        <input type="number" step="0.01" class="form-control" id="TotalConDescuento" name="TotalConDescuento" value="{{ $venta->TotalConDescuento }}" required>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Actualizar Venta</button>

@@ -25,17 +25,14 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="heading{{ $venta->id_venta }}">
                         <button class="accordion-button collapsed bg-light text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $venta->id_venta }}" aria-expanded="false" aria-controls="collapse{{ $venta->id_venta }}">
-                            {{ $loop->index + 1 }} -
-                            Venta #{{ $venta->id_venta }} -
-                            Fecha: {{ $venta->FechaDeVenta }} -
-                            Total: ${{ number_format($venta->TotalConDescuento, 2) }}
+                            {{ $loop->index + 1 }} - Venta #{{ $venta->id_venta }} - Fecha: {{ $venta->FechaDeVenta }} - Total: ${{ number_format($venta->TotalConDescuento, 2) }}
                         </button>
                     </h2>
                     <div id="collapse{{ $venta->id_venta }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $venta->id_venta }}" data-bs-parent="#ventasAccordion">
                         <div class="accordion-body">
                             <div class="d-flex justify-content-between">
-                                <a href="{{ route('venta.edit', $venta->id_venta) }}" class="btn btn-primary btn-sm">Editar</a>
-                                <form action="{{ route('venta.destroy', $venta->id_venta) }}" method="POST" class="d-inline">
+                                <a href="{{ route('venta.edit', ['venta' => $venta->id_venta]) }}" class="btn btn-primary btn-sm">Editar</a>
+                                <form action="{{ route('venta.destroy', ['venta' => $venta->id_venta]) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
@@ -43,27 +40,9 @@
                             </div>
 
                             <div class="mt-3">
-                                <p><strong>Cliente:</strong>
-                                    @if($venta->cliente)
-                                        {{ $venta->cliente->persona->Nombre ?? 'Sin Cliente Asociado' }}
-                                    @else
-                                        Sin Cliente Asociado
-                                    @endif
-                                </p>
-                                <p><strong>Empleado:</strong>
-                                    @if($venta->empleado)
-                                        {{ $venta->empleado->persona->Nombre ?? 'Sin Empleado Asociado' }}
-                                    @else
-                                        Sin Empleado Asociado
-                                    @endif
-                                </p>
-                                <p><strong>Método de Pago:</strong>
-                                    @if($venta->metodoPago)
-                                        {{ $venta->metodoPago->NombreMetods }}
-                                    @else
-                                        Sin Método de Pago Asociado
-                                    @endif
-                                </p>
+                                <p><strong>Cliente ID:</strong> {{ $venta->id_cliente }}</p>
+                                <p><strong>Empleado ID:</strong> {{ $venta->id_empleado }}</p>
+                                <p><strong>Método de Pago:</strong> {{ $venta->metodo_pago }}</p>
                                 <p><strong>Fecha de Venta:</strong> {{ $venta->FechaDeVenta }}</p>
                                 <p><strong>Total con Descuento:</strong> ${{ number_format($venta->TotalConDescuento, 2) }}</p>
                             </div>

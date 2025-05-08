@@ -25,20 +25,33 @@
         <!-- Formulario en tarjeta -->
         <div class="card shadow-sm">
             <div class="card-body">
-                <form action="{{ route('persona.store') }}" method="POST">
+                <form action="{{ route('persona.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
+
+                    <!-- Campo de Nombre -->
                     <div class="mb-3">
                         <label for="Nombre" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="Nombre" name="Nombre" required>
                     </div>
+
+                    <!-- Campo de Apellido Paterno -->
                     <div class="mb-3">
                         <label for="ap" class="form-label">Apellido Paterno</label>
                         <input type="text" class="form-control" id="ap" name="ap" required>
                     </div>
+
+                    <!-- Campo de Apellido Materno -->
                     <div class="mb-3">
                         <label for="am" class="form-label">Apellido Materno</label>
                         <input type="text" class="form-control" id="am" name="am" required>
                     </div>
+
+                    <!-- Campo para Cargar Foto -->
+                    <div class="mb-3">
+                        <label for="foto" class="form-label">Foto (opcional)</label>
+                        <input type="file" class="form-control" id="foto" name="foto" accept="image/*">
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </form>
             </div>

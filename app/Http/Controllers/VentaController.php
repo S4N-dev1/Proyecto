@@ -16,9 +16,26 @@ class VentaController extends Controller
      */
     public function index()
     {
-        $ventas = Venta::with(['cliente', 'empleado', 'metodosPago'])->get();
+        $ventas = \DB::table('ventas')
+            ->join('clientes', 'ventas.id_cliente', '=', 'clientes.id_cliente')
+            ->join('empleados', 'ventas.id_empleado', '=', 'empleados.id_empleado')
+            ->join('metodospagos', 'ventas.MetodoPagoID', '=', 'metodospagos.MetodoPagoID')
+            ->select(
+                'ventas.id_venta',
+                'ventas.FechaDeVenta',
+                'ventas.TotalConDescuento',
+                'clientes.id_cliente',
+                'clientes.id_persona',
+                'empleados.id_empleado',
+                'empleados.id_persona',
+                'metodospagos.NombreMetods as metodo_pago',
+                'metodospagos.MetodoPagoID'
+            )
+            ->get();
+
         return view('venta.index', compact('ventas'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -62,7 +79,7 @@ class VentaController extends Controller
     {
         $clientes = Cliente::all();
         $empleados = Empleado::all();
-        $metodosPago = metodospago::all();
+        $metodosPago = MetodosPago::all();
         return view('venta.edit', compact('venta', 'clientes', 'empleados', 'metodosPago'));
     }
 

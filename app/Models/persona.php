@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
 
 class Persona extends Model
 {
@@ -11,7 +12,7 @@ class Persona extends Model
 
     protected $table = 'personas';
     protected $primaryKey = 'id_personas';
-    protected $fillable = ['Nombre', 'ap', 'am'];
+    protected $fillable = ['Nombre', 'ap', 'am', 'foto'];
 
     /**
      * Relación con Provedor
@@ -19,5 +20,13 @@ class Persona extends Model
     public function provedor()
     {
         return $this->hasMany(Provedor::class, 'id_persona', 'id_personas');
+    }
+
+    /**
+     * Accesor para obtener la URL completa de la foto.
+     */
+    public function getFotoUrlAttribute()
+    {
+        return $this->foto ? Storage::url($this->foto) : null;
     }
 }

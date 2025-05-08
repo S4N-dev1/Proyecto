@@ -38,8 +38,9 @@ class Venta extends Model
     /**
      * Relación con la tabla `metodospagos`
      */
-    public function metodoPago()
+    public function metodospago()
     {
-        return $this->belongsTo(MetodoPago::class, 'MetodoPagoID', 'MetodoPagoID');
+        return $this->belongsTo(metodospago::class, 'MetodoPagoID', 'MetodoPagoID');
     }
+
 }

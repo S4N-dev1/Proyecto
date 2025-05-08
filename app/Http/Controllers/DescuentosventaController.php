@@ -14,7 +14,7 @@ class DescuentosventaController extends Controller
     public function index()
     {
         $descuentosventas = DescuentosVenta::with(['venta', 'descuento'])->get();
-        return view('descuentoventa.index', compact('descuentosventas'));
+        return view('descuentosventa.index', compact('descuentosventas'));
     }
 
     /**
@@ -24,7 +24,7 @@ class DescuentosventaController extends Controller
     {
         $ventas = Venta::all();
         $descuentos = Descuento::all();
-        return view('descuentoventa.create', compact('ventas', 'descuentos'));
+        return view('descuentosventa.create', compact('ventas', 'descuentos'));
     }
 
     /**
@@ -42,43 +42,44 @@ class DescuentosventaController extends Controller
             'DescuentoID' => $request->DescuentoID
         ]);
 
-        return redirect()->route('descuentoventa.index')->with('success', 'Descuento aplicado a la venta correctamente');
+        return redirect()->route('descuentosventa.index')->with('success', 'Descuento aplicado a la venta correctamente');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Descuentosventa $descuentoventa)
+    public function edit(Descuentosventa $descuentosventa)
     {
         $ventas = Venta::all();
         $descuentos = Descuento::all();
-        return view('descuentoventa.edit', compact('descuentoventa', 'ventas', 'descuentos'));
+        return view('descuentosventa.edit', compact('descuentosventa', 'ventas', 'descuentos'));
     }
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, DescuentosVenta $descuentoventa)
+    public function update(Request $request, DescuentosVenta $descuentosventa)
     {
         $request->validate([
             'id_venta' => 'required|exists:ventas,id_venta',
             'DescuentoID' => 'required|exists:descuentos,DescuentoID'
         ]);
 
-        $descuentoventa->update([
+        $descuentosventa->update([
             'id_venta' => $request->id_venta,
             'DescuentoID' => $request->DescuentoID
         ]);
 
-        return redirect()->route('descuentoventa.index')->with('success', 'Descuento de la venta actualizado correctamente');
+        return redirect()->route('descuentosventa.index')->with('success', 'Descuento de la venta actualizado correctamente');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DescuentosVenta $descuentoventa)
+    public function destroy(DescuentosVenta $descuentosventa)
     {
-        $descuentoventa->delete();
-        return redirect()->route('descuentoventa.index')->with('success', 'Descuento de la venta eliminado correctamente');
+        $descuentosventa->delete();
+        return redirect()->route('descuentosventa.index')->with('success', 'Descuento de la venta eliminado correctamente');
     }
 }

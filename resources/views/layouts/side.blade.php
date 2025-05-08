@@ -93,28 +93,28 @@
                                 <i class="bi bi-person-lines-fill me-2"></i> Personas
                             </a>
                             <a href="{{ route('provedor.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
-                                <i class="bi bi-person-lines-fill me-2"></i> Provedores
+                                <i class="bi bi-file-person me-2"></i> Provedores
                             </a>
                             <a href="{{ route('cliente.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
-                                <i class="bi bi-person-lines-fill me-2"></i> Clientes
+                                <i class="bi bi-person-check-fill me-2"></i> Clientes
                             </a>
                             <a href="{{ route('empleado.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
-                                <i class="bi bi-person-lines-fill me-2"></i> Empleados
+                                <i class="bi bi-person-arms-up me-2"></i> Empleados
                             </a>
                             <a href="{{ route('metodospago.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
                                 <i class="bi bi-credit-card-2-front-fill me-2"></i> Métodos de Pago
                             </a>
                             <a href="{{ route('producto.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
-                                <i class="bi bi-tags-fill me-2"></i> Productos
+                                <i class="bi bi-projector me-2"></i> Productos
                             </a>
                             <a href="{{ route('venta.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
-                                <i class="bi bi-tags-fill me-2"></i> Ventas
+                                <i class="bi bi-bag-fill me-2"></i> Ventas
                             </a>
                             <a href="{{ route('descuento.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
                                 <i class="bi bi-tags-fill me-2"></i> Descuentos
                             </a>
                             <a href="{{ route('descuentosventa.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
-                                <i class="bi bi-tags-fill me-2"></i> Ventas con descuento
+                                <i class="bi bi-bag me-2"></i> Ventas con descuento
                             </a>
                             <a href="#" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
                                 <i class="bi bi-person-gear me-2"></i> Soporte

@@ -25,28 +25,7 @@
                     <a class="nav-link" href="{{ url('ABPLANDING') }}" style="color: white; margin-right: 10px;">Productos</a>
                 </li>
                 <li class="nav-item me-2">
-                    <a class="nav-link" href="{{ url('ABPLANDING') }}" style="color: white; margin-right: 10px;">Clientes</a>
-                </li>
-                <li class="nav-item me-2">
-                    <a class="nav-link" href="{{ url('ABPLANDING') }}" style="color: white; margin-right: 10px;">Empleados</a>
-                </li>
-                <li class="nav-item me-2">
-                    <a class="nav-link" href="{{ url('ABPLANDING') }}" style="color: white; margin-right: 10px;">Ventas</a>
-                </li>
-                <li class="nav-item me-2">
-                    <a class="nav-link" href="{{ url('ABPLANDING') }}" style="color: white; margin-right: 10px;">Pagos</a>
-                </li>
-                <li class="nav-item me-2">
-                    <a class="nav-link" href="{{ url('ABPLANDING') }}" style="color: white; margin-right: 10px;">Proveedores</a>
-                </li>
-                <li class="nav-item me-2">
                     <a class="nav-link" href="{{ route('metodospago.index') }}" style="color: white; margin-right: 10px;">Métodos de Pago</a>
-                </li>
-                <li class="nav-item me-2">
-                    <a class="nav-link" href="{{ route('descuento.index') }}" style="color: white; margin-right: 10px;">Descuentos</a>
-                </li>
-                <li class="nav-item me-2">
-                    <a class="nav-link" href="{{ route('persona.index') }}" style="color: white; margin-right: 10px;">Personas</a>
                 </li>
                 <li class="nav-item me-2">
                     <a class="nav-link" href="{{ url('ABPLANDING') }}" style="color: white; margin-right: 10px;">Contacto</a>

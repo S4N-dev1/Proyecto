@@ -25,8 +25,11 @@ route::resource('provedor',App\Http\Controllers\ProvedorController::class);
 route::resource('cliente',App\Http\Controllers\ClienteController::class);
 route::resource('empleado',App\Http\Controllers\EmpleadoController::class);
 route::resource('producto',App\Http\Controllers\ProductoController::class);
-route::resource('venta',App\Http\Controllers\VentaController::class);
-route::resource('descuentosventa',App\Http\Controllers\DescuentosventaController::class);
+Route::resource('venta', App\Http\Controllers\VentaController::class)
+    ->parameters(['venta' => 'venta']);
+
+route::resource('descuentosventa',App\Http\Controllers\DescuentosventaController::class)
+->parameters(['descuentosventa' => 'descuentosventa']);
 
 
 

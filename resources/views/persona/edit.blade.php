@@ -25,21 +25,40 @@
         <!-- Formulario en tarjeta -->
         <div class="card shadow-sm">
             <div class="card-body">
-                <form action="{{ route('persona.update', $persona->id_personas) }}" method="POST">
+                <form action="{{ route('persona.update', $persona->id_personas) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
+
                     <div class="mb-3">
                         <label for="Nombre" class="form-label">Nombre de la Persona</label>
                         <input type="text" class="form-control" id="Nombre" name="Nombre" value="{{ $persona->Nombre }}" required>
                     </div>
+
                     <div class="mb-3">
                         <label for="ap" class="form-label">Apellido Paterno</label>
                         <input type="text" class="form-control" id="ap" name="ap" value="{{ $persona->ap }}" required>
                     </div>
+
                     <div class="mb-3">
                         <label for="am" class="form-label">Apellido Materno</label>
                         <input type="text" class="form-control" id="am" name="am" value="{{ $persona->am }}" required>
                     </div>
+
+                    <!-- Mostrar Foto Actual -->
+                    @if ($persona->foto)
+                        <div class="mb-3 text-center">
+                            <label class="form-label">Foto Actual:</label>
+                            <br>
+                            <img src="{{ asset('storage/' . $persona->foto) }}" alt="Foto" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                        </div>
+                    @endif
+
+                    <!-- Campo para Cargar Nueva Foto -->
+                    <div class="mb-3">
+                        <label for="foto" class="form-label">Cambiar Foto (opcional)</label>
+                        <input type="file" class="form-control" id="foto" name="foto" accept="image/*">
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Actualizar</button>
                 </form>
             </div>

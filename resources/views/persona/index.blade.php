@@ -8,8 +8,6 @@
                 <p class="fs-5">Gestiona la información de las personas en el sistema.</p>
                 <a href="{{ route('persona.create') }}" class="btn btn-light">Agregar Persona</a>
                 <a href="{{ url('ABPDASH') }}" class="btn btn-light">Regresar</a>
-                
-
             </div>
         </div>
 
@@ -40,10 +38,19 @@
                                     <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                                 </form>
                             </div>
+
                             <div class="mt-3">
                                 <p><strong>Nombre:</strong> {{ $persona->Nombre }}</p>
                                 <p><strong>Apellido Paterno:</strong> {{ $persona->ap }}</p>
                                 <p><strong>Apellido Materno:</strong> {{ $persona->am }}</p>
+
+                                <!-- Mostrar la imagen -->
+                                <p><strong>Foto:</strong></p>
+                                @if($persona->foto)
+                                    <img src="{{ asset('imgenes/' . $persona->foto) }}" alt="Foto de {{ $persona->Nombre }}" class="img-thumbnail" style="width: 150px; height: 150px;">
+                                @else
+                                    <p>No hay foto disponible.</p>
+                                @endif
                             </div>
                         </div>
                     </div>
