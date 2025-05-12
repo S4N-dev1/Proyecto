@@ -24,7 +24,7 @@
         <!-- Formulario en tarjeta -->
         <div class="card shadow-sm">
             <div class="card-body">
-                <form action="{{ route('producto.store') }}" method="POST">
+                <form action="{{ route('producto.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <!-- Campo de selección de proveedor -->
@@ -68,6 +68,12 @@
                     <div class="mb-3">
                         <label for="existencias" class="form-label">Existencias</label>
                         <input type="number" class="form-control" id="existencias" name="existencias" required>
+                    </div>
+
+                    <!-- Campo de foto -->
+                    <div class="mb-3">
+                        <label for="foto" class="form-label">Foto del Producto</label>
+                        <input type="file" class="form-control" id="foto" name="foto" accept="image/*">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Guardar Producto</button>

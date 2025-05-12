@@ -45,10 +45,18 @@
                             </div>
 
                             <div class="mt-3">
-                                <p><strong>Departamento:</strong> {{ $empleado->departamento ?? 'N/A' }}</p>
-                                <p><strong>Salario:</strong> ${{ number_format($empleado->salario, 2) }}</p>
-                                <p><strong>Fecha de Contratación:</strong> {{ $empleado->fechaContratacion ?? 'N/A' }}</p>
+                                <p><strong>Nombre:</strong> {{ $empleado->persona->Nombre ?? 'N/A' }}</p>
+                                <p><strong>Apellido Paterno:</strong> {{ $empleado->persona->ap ?? 'N/A' }}</p>
+                                <p><strong>Apellido Materno:</strong> {{ $empleado->persona->am ?? 'N/A' }}</p>
+
+                                <p><strong>Foto:</strong></p>
+                                @if($empleado->persona && $empleado->persona->foto)
+                                    <img src="{{ asset('storage/' . $empleado->persona->foto) }}" alt="Foto de {{ $empleado->persona->Nombre }}" class="img-thumbnail" style="width: 150px; height: 150px;">
+                                @else
+                                    <p>No hay foto disponible.</p>
+                                @endif
                             </div>
+
                         </div>
                     </div>
                 </div>

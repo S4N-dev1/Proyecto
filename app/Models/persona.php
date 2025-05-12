@@ -23,10 +23,11 @@ class Persona extends Model
     }
 
     /**
-     * Accesor para obtener la URL completa de la foto.
+     *
      */
     public function getFotoUrlAttribute()
     {
-        return $this->foto ? Storage::url($this->foto) : null;
+        return $this->foto ? asset('storage/' . $this->foto) : null;
     }
+
 }

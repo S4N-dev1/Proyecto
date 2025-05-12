@@ -47,6 +47,12 @@
                                 <p><strong>Nombre:</strong> {{ $cliente->persona->Nombre ?? 'N/A' }}</p>
                                 <p><strong>Apellido Paterno:</strong> {{ $cliente->persona->ap ?? 'N/A' }}</p>
                                 <p><strong>Apellido Materno:</strong> {{ $cliente->persona->am ?? 'N/A' }}</p>
+                                <p><strong>Foto:</strong></p>
+                                @if($cliente->persona && $cliente->persona->foto)
+                                    <img src="{{ asset('storage/' . $cliente->persona->foto) }}" alt="Foto de {{ $cliente->persona->Nombre }}" class="img-thumbnail" style="width: 150px; height: 150px;">
+                                @else
+                                    <p>No hay foto disponible.</p>
+                                @endif
                             </div>
                         </div>
                     </div>

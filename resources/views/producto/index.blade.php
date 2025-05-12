@@ -25,13 +25,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="heading{{ $producto->id_producto }}">
                         <button class="accordion-button collapsed bg-light text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $producto->id_producto }}" aria-expanded="false" aria-controls="collapse{{ $producto->id_producto }}">
-                            {{ $loop->index + 1 }} -
-                            {{ $producto->nombre }}
-                            @if($producto->provedor)
-                                - {{ $producto->provedor->persona->Nombre ?? 'Sin Proveedor Asociado' }}
-                            @else
-                                - Sin Proveedor Asociado
-                            @endif
+                            {{ $loop->index + 1 }} - {{ $producto->nombre }}
                         </button>
                     </h2>
                     <div id="collapse{{ $producto->id_producto }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $producto->id_producto }}" data-bs-parent="#productosAccordion">
@@ -53,11 +47,17 @@
                                 <p><strong>Existencias:</strong> {{ $producto->existencias }}</p>
                                 <p><strong>Proveedor:</strong>
                                     @if($producto->provedor)
-                                        {{ $producto->provedor->persona->Nombre ?? 'Sin Proveedor Asociado' }}
+                                        {{ $producto->provedor->nombre ?? 'Sin Proveedor Asociado' }}
                                     @else
                                         Sin Proveedor Asociado
                                     @endif
                                 </p>
+                                <p><strong>Foto:</strong></p>
+                                @if($producto->foto)
+                                    <img src="{{ $producto->foto_url }}" alt="Foto de {{ $producto->nombre }}" class="img-thumbnail" style="width: 150px; height: 150px;">
+                                @else
+                                    <p>No hay foto disponible.</p>
+                                @endif
                             </div>
                         </div>
                     </div>

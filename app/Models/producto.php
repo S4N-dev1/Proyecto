@@ -11,7 +11,7 @@ class Producto extends Model
 
     protected $table = 'productos';
     protected $primaryKey = 'id_producto';
-    protected $fillable = ['id_provedor', 'nombre', 'codigobarras', 'descripcion', 'precio', 'existencias'];
+    protected $fillable = ['id_provedor', 'nombre', 'codigobarras', 'descripcion', 'precio', 'existencias', 'foto'];
 
     /**
      * Relación con la tabla `provedores`
@@ -19,5 +19,24 @@ class Producto extends Model
     public function provedor()
     {
         return $this->belongsTo(Provedor::class, 'id_provedor', 'id_provedor');
+    }
+
+    /**
+     * Accesor para obtener la URL completa de la foto
+     */
+    public function getFotoUrlAttribute()
+    {
+        if ($this->foto) {
+
+            if (filter_var($this->foto, FILTER_VALIDATE_URL)) {
+                return $this->foto;
+            }
+
+
+            return asset('storage/' . $this->foto);
+        }
+
+
+        return asset('images/default-producto.png');
     }
 }

@@ -11,7 +11,7 @@
             </div>
         </div>
 
-        <!-- Mensaje emergente de éxito -->
+
         @if(session('success'))
             <div class="alert alert-info alert-dismissible fade show" role="alert">
                 {{ session('success') }}
@@ -19,7 +19,7 @@
             </div>
         @endif
 
-        <!-- Accordion para listar personas -->
+
         <div class="accordion" id="personasAccordion">
             @foreach($personas as $persona)
                 <div class="accordion-item">
@@ -43,14 +43,14 @@
                                 <p><strong>Nombre:</strong> {{ $persona->Nombre }}</p>
                                 <p><strong>Apellido Paterno:</strong> {{ $persona->ap }}</p>
                                 <p><strong>Apellido Materno:</strong> {{ $persona->am }}</p>
-
-                                <!-- Mostrar la imagen -->
                                 <p><strong>Foto:</strong></p>
                                 @if($persona->foto)
-                                    <img src="{{ asset('imgenes/' . $persona->foto) }}" alt="Foto de {{ $persona->Nombre }}" class="img-thumbnail" style="width: 150px; height: 150px;">
+                                    <img src="{{ $persona->foto_url }}" alt="Foto de {{ $persona->Nombre }}" class="img-thumbnail" style="width: 150px; height: 150px;">
                                 @else
                                     <p>No hay foto disponible.</p>
                                 @endif
+
+
                             </div>
                         </div>
                     </div>

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Provedor;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
@@ -37,27 +38,27 @@ class ProductoController extends Controller
             'codigobarras' => 'required|string|max:50',
             'descripcion' => 'nullable|string|max:255',
             'precio' => 'required|numeric',
-            'existencias' => 'required|integer'
+            'existencias' => 'required|integer',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ], [], [
+            'nombre' => 'nombre',
+            'codigobarras' => 'código de barras',
+            'descripcion' => 'descripción',
+            'precio' => 'precio',
+            'existencias' => 'existencias',
         ]);
 
-        Producto::create([
-            'id_provedor' => $request->id_provedor,
-            'nombre' => $request->nombre,
-            'codigobarras' => $request->codigobarras,
-            'descripcion' => $request->descripcion,
-            'precio' => $request->precio,
-            'existencias' => $request->existencias
-        ]);
+        $data = $request->only(['id_provedor', 'nombre', 'codigobarras', 'descripcion', 'precio', 'existencias']);
+
+        // Manejo de la foto
+        if ($request->hasFile('foto')) {
+            $ruta = $request->file('foto')->store('productos', 'public');
+            $data['foto'] = $ruta;
+        }
+
+        Producto::create($data);
 
         return redirect()->route('producto.index')->with('success', 'Producto agregado correctamente');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Producto $producto)
-    {
-        return view('producto.show', compact('producto'));
     }
 
     /**
@@ -80,17 +81,32 @@ class ProductoController extends Controller
             'codigobarras' => 'required|string|max:50',
             'descripcion' => 'nullable|string|max:255',
             'precio' => 'required|numeric',
-            'existencias' => 'required|integer'
+            'existencias' => 'required|integer',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ], [], [
+            'nombre' => 'nombre',
+            'codigobarras' => 'código de barras',
+            'descripcion' => 'descripción',
+            'precio' => 'precio',
+            'existencias' => 'existencias',
         ]);
 
-        $producto->update([
-            'id_provedor' => $request->id_provedor,
-            'nombre' => $request->nombre,
-            'codigobarras' => $request->codigobarras,
-            'descripcion' => $request->descripcion,
-            'precio' => $request->precio,
-            'existencias' => $request->existencias
-        ]);
+        $data = $request->only(['id_provedor', 'nombre', 'codigobarras', 'descripcion', 'precio', 'existencias']);
+
+        // Si hay una nueva foto
+        if ($request->hasFile('foto')) {
+            // Eliminar la foto antigua si existe
+            if ($producto->foto && Storage::disk('public')->exists($producto->foto)) {
+                Storage::disk('public')->delete($producto->foto);
+            }
+
+            // Guardar la nueva foto
+            $ruta = $request->file('foto')->store('productos', 'public');
+            $data['foto'] = $ruta;
+        }
+
+        // Actualizar el producto
+        $producto->update($data);
 
         return redirect()->route('producto.index')->with('success', 'Producto actualizado correctamente');
     }
@@ -100,7 +116,14 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
+        // Eliminar la foto si existe
+        if ($producto->foto && Storage::disk('public')->exists($producto->foto)) {
+            Storage::disk('public')->delete($producto->foto);
+        }
+
+        // Eliminar el producto
         $producto->delete();
+
         return redirect()->route('producto.index')->with('success', 'Producto eliminado correctamente');
     }
 }

@@ -22,7 +22,7 @@
             </div>
         @endif
 
-        <!-- Formulario en tarjeta -->
+
         <div class="card shadow-sm">
             <div class="card-body">
                 <form action="{{ route('persona.update', $persona->id_personas) }}" method="POST" enctype="multipart/form-data">
@@ -44,7 +44,7 @@
                         <input type="text" class="form-control" id="am" name="am" value="{{ $persona->am }}" required>
                     </div>
 
-                    <!-- Mostrar Foto Actual -->
+
                     @if ($persona->foto)
                         <div class="mb-3 text-center">
                             <label class="form-label">Foto Actual:</label>
@@ -53,7 +53,6 @@
                         </div>
                     @endif
 
-                    <!-- Campo para Cargar Nueva Foto -->
                     <div class="mb-3">
                         <label for="foto" class="form-label">Cambiar Foto (opcional)</label>
                         <input type="file" class="form-control" id="foto" name="foto" accept="image/*">

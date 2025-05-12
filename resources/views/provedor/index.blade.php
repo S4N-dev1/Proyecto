@@ -47,6 +47,19 @@
                                 <p><strong>Nombre:</strong> {{ $provedor->persona->Nombre ?? 'N/A' }}</p>
                                 <p><strong>Apellido Paterno:</strong> {{ $provedor->persona->ap ?? 'N/A' }}</p>
                                 <p><strong>Apellido Materno:</strong> {{ $provedor->persona->am ?? 'N/A' }}</p>
+                                <div class="mt-3">
+                                    <p><strong>Nombre:</strong> {{ $provedor->persona->Nombre ?? 'N/A' }}</p>
+                                    <p><strong>Apellido Paterno:</strong> {{ $provedor->persona->ap ?? 'N/A' }}</p>
+                                    <p><strong>Apellido Materno:</strong> {{ $provedor->persona->am ?? 'N/A' }}</p>
+
+                                    <p><strong>Foto:</strong></p>
+                                    @if($provedor->persona && $provedor->persona->foto)
+                                        <img src="{{ asset('storage/' . $provedor->persona->foto) }}" alt="Foto de {{ $provedor->persona->Nombre }}" class="img-thumbnail" style="width: 150px; height: 150px;">
+                                    @else
+                                        <p>No hay foto disponible.</p>
+                                    @endif
+                                </div>
+
                             </div>
                         </div>
                     </div>

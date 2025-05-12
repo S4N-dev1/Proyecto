@@ -24,7 +24,7 @@
         <!-- Formulario en tarjeta -->
         <div class="card shadow-sm">
             <div class="card-body">
-                <form action="{{ route('producto.update', $producto->id_producto) }}" method="POST">
+                <form action="{{ route('producto.update', $producto->id_producto) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -75,6 +75,20 @@
                         <input type="number" class="form-control" id="existencias" name="existencias"
                                value="{{ $producto->existencias }}" required>
                     </div>
+
+                    <!-- Campo de foto -->
+                    <div class="mb-3">
+                        <label for="foto" class="form-label">Foto del Producto</label>
+                        <input type="file" class="form-control" id="foto" name="foto" accept="image/*">
+                    </div>
+
+                    <!-- Mostrar foto actual -->
+                    @if($producto->foto)
+                        <div class="mb-3 text-center">
+                            <p class="text-muted">Foto actual:</p>
+                            <img src="{{ $producto->foto_url }}" alt="Foto actual" class="img-thumbnail" style="max-height: 200px;">
+                        </div>
+                    @endif
 
                     <button type="submit" class="btn btn-primary">Actualizar Producto</button>
                 </form>

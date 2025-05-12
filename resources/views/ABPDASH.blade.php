@@ -5,12 +5,10 @@
 
     <div class="container-fluid bg-custom-color-G2">
         <div class="row">
-            <!-- Sidebar rediseñado -->
 
 
-            <!-- Contenido principal -->
+
             <main class="col-md-10 p-4">
-                <!-- Aquí iría el resto del contenido -->
                 <div class="row">
                     <div class="col-md-4 text-center px-1 shadow">
                         <div class="card">
@@ -33,7 +31,6 @@
                 </div>
                 <div class="row p-2">
                     <h3 class="text-custom-color-A8">Lista de Actividades</h3>
-                    <!-- Botones de actividades -->
                     <div class="col-2 ms-1 p-3 d-flex align-items-center justify-content-center card pt-4 shadow text-center">
                         <button type="button" class="btn w-100">
                             <h5 class="text-custom-color-A2 fw-bold"><i class="bi bi-bag-fill"></i> Pedidos y ventas</h5>
