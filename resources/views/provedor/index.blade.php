@@ -7,7 +7,7 @@
                 <h1 class="display-6 fw-bold">Provedores</h1>
                 <p class="fs-5">Gestiona la información de los provedores en el sistema.</p>
                 <a href="{{ route('provedor.create') }}" class="btn btn-light">Agregar provedor</a>
-                <a href="{{ url('ABPDASH') }}" class="btn btn-light">Regresar</a>
+                <a href="{{ url('home') }}" class="btn btn-light">Regresar</a>
             </div>
         </div>
 

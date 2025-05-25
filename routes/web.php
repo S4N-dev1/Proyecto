@@ -6,12 +6,15 @@ Route::get('home', function () {
     return view('home');
 });
 
-Route::get('ABPDASH', function () {
-    return view('ABPDASH');
-});
+
 Route::get('ABPLANDING', function () {
     return view('ABPLANDING');
 });
+Route::get('contacto.index', function () {
+    return view('contacto.index');
+});
+
+
 
 
 
@@ -31,6 +34,6 @@ Route::resource('venta', App\Http\Controllers\VentaController::class)
 route::resource('descuentosventa',App\Http\Controllers\DescuentosventaController::class)
 ->parameters(['descuentosventa' => 'descuentosventa']);
 
-
+Route::get('abpdash', [App\Http\Controllers\AbpdashController::class, 'index'])->name('abpdash.index');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('');

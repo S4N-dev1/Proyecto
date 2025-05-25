@@ -11,7 +11,7 @@
                     <i class="bi bi-feather"></i> Pluma y Papel
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{{ url('ABPDASH') }}"><i class="bi bi-file-earmark"></i> DASH</a></li>
+                    <li><a class="dropdown-item" href="{{ url('home') }}"><i class="bi bi-file-earmark"></i> DASH</a></li>
                     <li><a class="dropdown-item" href="#">Opción 2</a></li>
                     <li><a class="dropdown-item" href="#">Opción 3</a></li>
                 </ul>
@@ -28,7 +28,7 @@
                     <a class="nav-link" href="{{ route('metodospago.index') }}" style="color: white; margin-right: 10px;">Métodos de Pago</a>
                 </li>
                 <li class="nav-item me-2">
-                    <a class="nav-link" href="{{ url('ABPLANDING') }}" style="color: white; margin-right: 10px;">Contacto</a>
+                    <a class="nav-link" href="{{ url('contacto.index') }}" style="color: white; margin-right: 10px;">Contacto</a>
                 </li>
                 <li class="nav-item me-2">
                     <a class="nav-link" href="{{ url('ABPLANDING') }}" style="color: white; margin-right: 10px;">Cerrar sesión</a>
@@ -152,7 +152,7 @@
     <section class="bg-primary text-white text-center py-5">
         <div class="container">
             <h3 class="mb-3">¿Listo para comenzar?</h3>
-            <a href="{{ url('ABPLANDING') }}" class="btn btn-outline-light btn-lg">Explorar productos</a>
+            <a href="{{ url('contacto.index') }}" class="btn btn-outline-light btn-lg">Registrarse</a>
         </div>
     </section>
 @endsection

@@ -8,7 +8,7 @@
                 <h1 class="display-6 fw-bold">Tipos de Descuentos</h1>
                 <p class="fs-5">Gestiona y revisa todos los descuentos disponibles en el sistema.</p>
                 <a href="{{ route('descuento.create') }}" class="btn btn-light">Agregar Descuento</a>
-                <a href="{{ url('ABPDASH') }}" class="btn btn-light">Regresar</a>
+                <a href="{{ url('home') }}" class="btn btn-light">Regresar</a>
             </div>
         </div>
 

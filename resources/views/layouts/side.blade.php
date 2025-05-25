@@ -15,6 +15,8 @@
 
     <!-- Scripts y estilos -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <div id="app">
@@ -116,8 +118,11 @@
                             <a href="{{ route('descuentosventa.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
                                 <i class="bi bi-bag me-2"></i> Ventas con descuento
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
-                                <i class="bi bi-person-gear me-2"></i> Soporte
+                            <a href="{{ url('contacto.index') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
+                                <i class="bi bi-person-gear me-2"></i> Contacto
+                            </a>
+                            <a href="{{ url('home') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
+                                <i class="bi bi-file-earmark me-2"></i> Dashboard
                             </a>
                             <a href="{{ url('ABPLANDING') }}" class="list-group-item list-group-item-action bg-custom-color-A7 text-light border-0 py-3">
                                 <i class="bi bi-file-earmark me-2"></i> Landing page

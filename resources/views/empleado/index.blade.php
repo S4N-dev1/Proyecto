@@ -7,7 +7,7 @@
                 <h1 class="display-6 fw-bold">Empleados</h1>
                 <p class="fs-5">Gestiona la información de los empleados en el sistema.</p>
                 <a href="{{ route('empleado.create') }}" class="btn btn-light">Agregar Empleado</a>
-                <a href="{{ url('ABPDASH') }}" class="btn btn-light">Regresar</a>
+                <a href="{{ url('home') }}" class="btn btn-light">Regresar</a>
             </div>
         </div>
 

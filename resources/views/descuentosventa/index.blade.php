@@ -7,7 +7,7 @@
                 <h1 class="display-6 fw-bold">Descuentos por Venta</h1>
                 <p class="fs-5">Gestiona los descuentos aplicados a cada venta en el sistema.</p>
                 <a href="{{ route('descuentosventa.create') }}" class="btn btn-light">Registrar Descuento en Venta</a>
-                <a href="{{ url('ABPDASH') }}" class="btn btn-light">Regresar</a>
+                <a href="{{ url('home') }}" class="btn btn-light">Regresar</a>
             </div>
         </div>
 

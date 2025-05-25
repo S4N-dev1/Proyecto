@@ -7,7 +7,7 @@
                 <h1 class="display-6 fw-bold">Ventas</h1>
                 <p class="fs-5">Gestiona la información de las ventas registradas en el sistema.</p>
                 <a href="{{ route('venta.create') }}" class="btn btn-light">Registrar Venta</a>
-                <a href="{{ url('ABPDASH') }}" class="btn btn-light">Regresar</a>
+                <a href="{{ url('home') }}" class="btn btn-light">Regresar</a>
             </div>
         </div>
 
