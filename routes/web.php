@@ -9,10 +9,9 @@ Route::get('home', function () {
 
 use App\Models\Producto;
 
-Route::get('ABPLANDING', function () {
-    $productos = Producto::latest()->take(6)->get();
-    return view('ABPLANDING', compact('productos'));
-});
+use App\Http\Controllers\LandingController;
+
+Route::get('ABPLANDING', [LandingController::class, 'index'])->name('landing.index');
 
 Route::get('contacto.index', function () {
     return view('contacto.index');
