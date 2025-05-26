@@ -51,29 +51,14 @@
                         <p class="card-text">
                             <strong>Código de Barras:</strong> {{ $producto->codigobarras }}<br>
                             <strong>Descripción:</strong> {{ $producto->descripcion ?? 'Sin descripción' }}<br>
-                            <strong>Precio:</strong> ${{ number_format($producto->precio, 2) }}<br>
-                            <strong>Existencias:</strong> {{ $producto->existencias }}<br>
-                            <strong>Proveedor:</strong>
-                            @if($producto->provedor)
-                                {{ $producto->provedor->nombre ?? 'Sin Proveedor Asociado' }}
-                            @else
-                                Sin Proveedor Asociado
-                            @endif
-                        </p>
-                    </div>
-                    <div class="card-footer text-end">
-                        <a href="{{ route('producto.edit', $producto->id_producto) }}" class="btn btn-primary btn-sm">Editar</a>
-                        <form action="{{ route('producto.destroy', $producto->id_producto) }}" method="POST" class="d-inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                        </form>
+                            <strong>Precio:</strong> ${{ number_format($producto->precio, 2) }}                        </p>
                     </div>
                 </div>
             </div>
         @endforeach
     </div>
 </div>
+
 
 
     {{-- Opiniones --}}
