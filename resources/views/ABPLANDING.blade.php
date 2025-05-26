@@ -95,4 +95,16 @@
             <a href="{{ url('contacto.index') }}" class="btn btn-outline-light btn-lg">Registrarse</a>
         </div>
     </section>
+     <section class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <h4 class="mb-3">Síguenos en nuestras redes sociales</h4>
+            <div class="d-flex justify-content-center gap-4">
+                <a href="https://facebook.com" target="_blank" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                <a href="https://twitter.com" target="_blank" class="text-white fs-4"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://tiktok.com" target="_blank" class="text-white fs-4"><i class="bi bi-tiktok"></i></a>
+                <a href="https://youtube.com" target="_blank" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+            </div>
+        </div>
+    </section>
 @endsection
