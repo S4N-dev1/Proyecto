@@ -7,6 +7,14 @@ use App\Models\Provedor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
+
+public function index()
+{
+    $productos = Producto::latest()->take(6)->get(); // Los 6 productos más recientes o destacados
+    return view('ABPLANDING', compact('productos'));
+}
+
+
 class ProductoController extends Controller
 {
     /**

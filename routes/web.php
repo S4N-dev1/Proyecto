@@ -7,9 +7,13 @@ Route::get('home', function () {
 });
 
 
+use App\Models\Producto;
+
 Route::get('ABPLANDING', function () {
-    return view('ABPLANDING');
+    $productos = Producto::latest()->take(6)->get();
+    return view('ABPLANDING', compact('productos'));
 });
+
 Route::get('contacto.index', function () {
     return view('contacto.index');
 });

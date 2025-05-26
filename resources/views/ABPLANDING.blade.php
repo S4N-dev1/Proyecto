@@ -37,43 +37,29 @@
     {{-- Más Vendidos --}}
     <section class="container py-5">
         <h2 class="text-center fw-bold mb-4">Más Vendidos</h2>
+
+        
         <div class="row g-4">
-
-            <form class="d-flex" action="{{ route('producto.index') }}" method="GET">
-         <input class="form-control me-2" type="search" name="q" placeholder="Buscar productos..." aria-label="Buscar">
-          <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
-        </form>
-
-
-            @php
-                $productos = [
-                    ['img' => 'colors1.jpeg', 'titulo' => 'Colores', 'desc' => 'Perfectos para dar vida a tus ideas.'],
-                    ['img' => 'tinta1.jpeg', 'titulo' => 'Tinta para impresora', 'desc' => 'Nitidez y calidad en cada impresión.'],
-                    ['img' => 'Boli1.jpeg', 'titulo' => 'Bolígrafos', 'desc' => 'Escribe con estilo y comodidad.'],
-                    ['img' => 'lapiceros.jpg', 'titulo' => 'Lapiceros', 'desc' => 'Ideales para cualquier tarea.'],
-                    ['img' => 'libretas.png', 'titulo' => 'Libretas', 'desc' => 'Tus ideas organizadas en un solo lugar.'],
-                    ['img' => 'trans.jpg', 'titulo' => 'Transportador', 'desc' => 'Mide con precisión y claridad.'],
-                    ['img' => 'tijeras.jpg', 'titulo' => 'Tijeras', 'desc' => 'Corte preciso y cómodo.'],
-                    ['img' => 'postis.png', 'titulo' => 'Post-its', 'desc' => 'Notas adhesivas para cada ocasión.'],
-                ];
-            @endphp
-
-            @foreach($productos as $producto)
+            @forelse($productos as $producto)
                 <div class="col-md-4">
-                    <div class="card shadow-sm">
-                        <img src="{{ asset('imgenes/' . $producto['img']) }}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="{{ $producto['titulo'] }}">
+                    <div class="card shadow-sm h-100">
+                        <img src="{{ asset('storage/' . $producto->imagen) }}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="{{ $producto->nombre }}">
                         <div class="card-body text-center">
-                            <h5 class="card-title">{{ $producto['titulo'] }}</h5>
-                            <p class="card-text">{{ $producto['desc'] }}</p>
+                            <h5 class="card-title">{{ $producto->nombre }}</h5>
+                            <p class="card-text">{{ $producto->descripcion }}</p>
+                            <p class="text-primary fw-bold">${{ number_format($producto->precio, 2) }}</p>
                         </div>
                     </div>
                 </div>
-            @endforeach
-
+            @empty
+                <div class="col-12 text-center">
+                    <p class="text-muted">No hay productos disponibles actualmente.</p>
+                </div>
+            @endforelse
         </div>
 
         <div class="text-center mt-4">
-            <a href="{{ url('ABPLANDING') }}" class="btn btn-primary btn-lg">Ver todos los productos</a>
+            <a href="{{ route('producto.index') }}" class="btn btn-primary btn-lg">Ver todos los productos</a>
         </div>
     </section>
 
@@ -100,7 +86,9 @@
             <a href="{{ url('contacto.index') }}" class="btn btn-outline-light btn-lg">Registrarse</a>
         </div>
     </section>
-     <section class="bg-dark text-white text-center py-4">
+
+    {{-- Footer --}}
+    <section class="bg-dark text-white text-center py-4">
         <div class="container">
             <h4 class="mb-3">Síguenos en nuestras redes sociales</h4>
             <div class="d-flex justify-content-center gap-4">
