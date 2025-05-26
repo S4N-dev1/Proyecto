@@ -28,6 +28,7 @@ route::resource('provedor',App\Http\Controllers\ProvedorController::class);
 route::resource('cliente',App\Http\Controllers\ClienteController::class);
 route::resource('empleado',App\Http\Controllers\EmpleadoController::class);
 route::resource('producto',App\Http\Controllers\ProductoController::class);
+route::resource('productViewer',App\Http\Controllers\ProductViewerController::class);
 Route::resource('venta', App\Http\Controllers\VentaController::class)
     ->parameters(['venta' => 'venta']);
 
