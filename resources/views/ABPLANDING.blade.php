@@ -20,7 +20,6 @@
                 <li class="nav-item me-2"><a class="nav-link text-white" href="{{ url('ABPLANDING') }}">Inicio</a></li>
                 <li class="nav-item me-2"><a class="nav-link text-white" href="{{ url('ABPLANDING') }}">Productos</a></li>
                 <li class="nav-item me-2"><a class="nav-link text-white" href="{{ route('metodospago.index') }}">Métodos de Pago</a></li>
-                <li class="nav-item me-2"><a class="nav-link text-white" href="{{ url('contacto.index') }}">Contacto</a></li>
                 <li class="nav-item me-2"><a class="nav-link text-white" href="{{ url('ABPLANDING') }}">Cerrar sesión</a></li>
             </ul>
         </div>
