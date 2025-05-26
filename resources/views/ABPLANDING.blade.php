@@ -35,33 +35,23 @@
     </section>
 
     {{-- Más Vendidos --}}
-    <section class="container py-5">
-        <h2 class="text-center fw-bold mb-4">Más Vendidos</h2>
-
-        
-        <div class="row g-4">
-            @forelse($productos as $producto)
-                <div class="col-md-4">
-                    <div class="card shadow-sm h-100">
-                        <img src="{{ asset('storage/' . $producto->imagen) }}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="{{ $producto->nombre }}">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">{{ $producto->nombre }}</h5>
-                            <p class="card-text">{{ $producto->descripcion }}</p>
-                            <p class="text-primary fw-bold">${{ number_format($producto->precio, 2) }}</p>
-                        </div>
+    <div class="container mt-5">
+    <h2 class="text-center mb-4">Productos Destacados</h2>
+    <div class="row">
+        @foreach($productos as $producto)
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{ asset('imgenes/' . $producto->foto) }}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="{{ $producto->nombre }}">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ $producto->nombre }}</h5>
+                        <p class="card-text">{{ $producto->descripcion }}</p>
+                        <p class="text-success fw-bold">${{ $producto->precio }}</p>
                     </div>
                 </div>
-            @empty
-                <div class="col-12 text-center">
-                    <p class="text-muted">No hay productos disponibles actualmente.</p>
-                </div>
-            @endforelse
-        </div>
-
-        <div class="text-center mt-4">
-            <a href="{{ route('producto.index') }}" class="btn btn-primary btn-lg">Ver todos los productos</a>
-        </div>
-    </section>
+            </div>
+        @endforeach
+    </div>
+</div>
 
     {{-- Opiniones --}}
     <section class="bg-light py-5 text-center">
