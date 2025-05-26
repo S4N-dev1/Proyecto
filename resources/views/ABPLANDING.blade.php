@@ -39,6 +39,12 @@
         <h2 class="text-center fw-bold mb-4">Más Vendidos</h2>
         <div class="row g-4">
 
+            <form class="d-flex" action="{{ route('producto.index') }}" method="GET">
+         <input class="form-control me-2" type="search" name="q" placeholder="Buscar productos..." aria-label="Buscar">
+          <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+
+
             @php
                 $productos = [
                     ['img' => 'colors1.jpeg', 'titulo' => 'Colores', 'desc' => 'Perfectos para dar vida a tus ideas.'],
@@ -98,11 +104,11 @@
         <div class="container">
             <h4 class="mb-3">Síguenos en nuestras redes sociales</h4>
             <div class="d-flex justify-content-center gap-4">
-                <a href="https://facebook.com" target="_blank" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
-                <a href="https://instagram.com" target="_blank" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
-                <a href="https://twitter.com" target="_blank" class="text-white fs-4"><i class="bi bi-twitter-x"></i></a>
-                <a href="https://tiktok.com" target="_blank" class="text-white fs-4"><i class="bi bi-tiktok"></i></a>
-                <a href="https://youtube.com" target="_blank" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+                <a href="https://facebook.com" target="_blank" class="text-white fs-4"><i class="bi bi-facebook">plumaypapel</i></a>
+                <a href="https://instagram.com" target="_blank" class="text-white fs-4"><i class="bi bi-instagram">pluma_y_papel2000</i></a>
+                <a href="https://twitter.com" target="_blank" class="text-white fs-4"><i class="bi bi-twitter-x">@PapeleriaPyP</i></a>
+                <a href="https://tiktok.com" target="_blank" class="text-white fs-4"><i class="bi bi-tiktok"></i>plumaypapel</a>
+                <a href="https://youtube.com" target="_blank" class="text-white fs-4"><i class="bi bi-youtube">Pape PyP</i></a>
             </div>
         </div>
     </section>
