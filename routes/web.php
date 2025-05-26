@@ -16,6 +16,10 @@ Route::get('contacto.index', function () {
 
 
 
+Route::get('ABPDASH', function () {
+    return view('ABPDASH');
+})->name('dashboard');
+
 
 
 
