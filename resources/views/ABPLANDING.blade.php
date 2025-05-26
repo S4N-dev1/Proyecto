@@ -35,23 +35,46 @@
     </section>
 
     {{-- Más Vendidos --}}
-    <div class="container mt-5">
-    <h2 class="text-center mb-4">Productos Destacados</h2>
-    <div class="row">
+    <div class="container mt-4">
+    <h2 class="text-center mb-4">Listado de Productos</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
         @foreach($productos as $producto)
-            <div class="col-md-4 mb-4">
+            <div class="col">
                 <div class="card h-100 shadow-sm">
-                    <img src="{{ asset('imgenes/' . $producto->foto) }}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="{{ $producto->nombre }}">
-                    <div class="card-body text-center">
+                    @if($producto->foto)
+                        <img src="{{ $producto->foto_url }}" class="card-img-top" alt="Foto de {{ $producto->nombre }}" style="height: 200px; object-fit: cover;">
+                    @else
+                        <img src="{{ asset('imgenes/default.png') }}" class="card-img-top" alt="Sin imagen" style="height: 200px; object-fit: cover;">
+                    @endif
+                    <div class="card-body">
                         <h5 class="card-title">{{ $producto->nombre }}</h5>
-                        <p class="card-text">{{ $producto->descripcion }}</p>
-                        <p class="text-success fw-bold">${{ $producto->precio }}</p>
+                        <p class="card-text">
+                            <strong>Código de Barras:</strong> {{ $producto->codigobarras }}<br>
+                            <strong>Descripción:</strong> {{ $producto->descripcion ?? 'Sin descripción' }}<br>
+                            <strong>Precio:</strong> ${{ number_format($producto->precio, 2) }}<br>
+                            <strong>Existencias:</strong> {{ $producto->existencias }}<br>
+                            <strong>Proveedor:</strong>
+                            @if($producto->provedor)
+                                {{ $producto->provedor->nombre ?? 'Sin Proveedor Asociado' }}
+                            @else
+                                Sin Proveedor Asociado
+                            @endif
+                        </p>
+                    </div>
+                    <div class="card-footer text-end">
+                        <a href="{{ route('producto.edit', $producto->id_producto) }}" class="btn btn-primary btn-sm">Editar</a>
+                        <form action="{{ route('producto.destroy', $producto->id_producto) }}" method="POST" class="d-inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                        </form>
                     </div>
                 </div>
             </div>
         @endforeach
     </div>
 </div>
+
 
     {{-- Opiniones --}}
     <section class="bg-light py-5 text-center">
