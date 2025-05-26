@@ -31,36 +31,46 @@
                     <div
                         class="col-2 ms-1 p-3 d-flex align-items-center justify-content-center card pt-4 shadow text-center">
                         <button type="button" class="btn w-100">
-                            <h5 class="text-custom-color-A2 fw-bold"><i class="bi bi-bag-fill"></i> Pedidos y ventas
+                            <a href="{{ route('venta.index') }}" class="btn w-100">
+                            <h5 class="text-custom-color-A2 fw-bold"><i class="bi bi-bag-fill"></i>  ventas
                             </h5>
+                            </a>
                         </button>
                     </div>
                     <div
                         class="col-2 ms-1 p-3 d-flex align-items-center justify-content-center card pt-4 shadow text-center">
                         <button type="button" class="btn w-100">
-                            <h5 class="text-custom-color-A2 fw-bold"><i class="bi bi-people-fill"></i> Usuarios nuevos
+                            <a href="{{ route('cliente.index') }}" class="btn w-100">
+                            <h5 class="text-custom-color-A2 fw-bold"><i class="bi bi-people-fill"></i> Usuarios Clientes
                             </h5>
+                            </a>
+                        </button>
+                    </div>
+                    <div
+                        class="col-2 ms-1 p-3 d-flex align-items-center justify-content-center card pt-4 shadow text-center">
+                        <button type="button" class="btn w-100" >
+                            <a href="{{ route('metodospago.index') }}" class="btn w-100">
+                                <h5 class="text-custom-color-A2">
+                                    <i class="bi bi-credit-card-2-front-fill"></i> Métodos de pago
+                                </h5>
+                            </a>
                         </button>
                     </div>
                     <div
                         class="col-2 ms-1 p-3 d-flex align-items-center justify-content-center card pt-4 shadow text-center">
                         <button type="button" class="btn w-100">
-                            <h5 class="text-custom-color-A2"><i class="bi bi-exclamation-triangle-fill"></i>
-                                Errores/Alertas</h5>
-                        </button>
-                    </div>
-                    <div
-                        class="col-2 ms-1 p-3 d-flex align-items-center justify-content-center card pt-4 shadow text-center">
-                        <button type="button" class="btn w-100">
+                            <a href="{{ route('provedor.index') }}" class="btn w-100">
                             <h5 class="text-custom-color-A2 fw-bold"><i class="bi bi-file-earmark-check-fill"></i>
-                                Transacciones recientes</h5>
+                                Provedores</h5>
+                            </a>
                         </button>
                     </div>
                     <div
                         class="col-2 ms-1 p-3 d-flex align-items-center justify-content-center card pt-4 shadow text-center">
                         <button type="button" class="btn w-100">
-                            <h5 class="text-custom-color-A2 fw-bold"><i class="bi bi-clock-fill"></i> Publicaciones
-                                recientes</h5>
+                            <a href="{{ route('empleado.index') }}" class="btn w-100">
+                            <h5 class="text-custom-color-A2 fw-bold"><i class="bi bi-person-arms-up"></i> Empleados</h5>
+                            </a>
                         </button>
                     </div>
                 </div>
